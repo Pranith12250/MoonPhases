@@ -1,0 +1,29 @@
+body
+{
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 20px;
+}
+
+h1
+{
+	margin-bottom: 20px;
+}
+
+#uploadButton
+{
+	display: block;
+	margin: 20px auto;
+}
+
+#uploadedImage
+{
+	display: block;
+	max-width: 100%;
+	margin: 20px auto;
+}
+
+#submitButton
+{
+	margin-top: 20px;
+}
