@@ -1,8 +1,10 @@
 body
 {
 	font-family: Arial, sans-serif;
+	color: white;
 	text-align: center;
 	margin: 20px;
+	background-image: url("background.jpeg");
 }
 
 h1
