@@ -5,6 +5,7 @@ body
 	text-align: center;
 	margin: 20px;
 	background-image: url("background.jpeg");
+	background-size: cover;
 }
 
 h1
