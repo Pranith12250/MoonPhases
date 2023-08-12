@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded',function()
 	function sendImageToPredictionAPI(image)
 	{
 		const predictionApiUrl='https://computervisionlearning2-prediction.cognitiveservices.azure.com/';
-		const predictionKey='50a3aee310d145d591f801768a3405b1'
+		const predictionKey=''
 
 		const headers=new Headers(
 		{
