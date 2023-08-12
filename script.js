@@ -19,4 +19,61 @@ document.addEventListener('DOMContentLoaded',function()
 			reader.readAsDataURL(file);
 		}
 	});
+
+	submitButton.addEventListener('click',function()
+	{
+		if(uploadedImage.src && uploadedImage.style.display!='none')
+		{
+			const image=new Image();
+			image.src=uploadedImage.src;
+			image.onload=function()
+			{
+				sendImageToPredictionAPI(image)
+			};
+		}
+	});
+
+	function sendImageToPredictionAPI(image)
+	{
+		const predictionApiUrl='https://computervisionlearning2-prediction.cognitiveservices.azure.com/';
+		const predictionKey='50a3aee310d145d591f801768a3405b1'
+
+		const headers=new Headers(
+		{
+			'Prediction-Key': predictionKey,
+			'Content-Type': 'application/octet-stream'
+		});
+
+		fetch(image.src)
+        .then(response => response.blob())
+        .then(blob => 
+        {
+            const options = {
+                method: 'POST',
+                headers: headers,
+                body: blob
+        };
+
+		fetch('https://computervisionlearning2-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/204d319c-3773-49b0-ab22-0390fca2dd1d/classify/iterations/classifyModel/image',options)
+			.then(response=>response.json())
+			.then(data=>
+			{
+				const predictions=data.predictions;
+				let highestProbabilityIndex=0
+				for(let i=1;i<predictions.length;i++)
+					if (predictions[i].probability > predictions[highestProbabilityIndex].probability)
+        				highestProbabilityIndex = i;
+				const finalAnswerElement=document.getElementById('finalAnswer');
+				finalAnswerElement.textContent="Prediction: "+predictions[highestProbabilityIndex].tagName+", Probability: "+(predictions[highestProbabilityIndex].probability*100)+"%";
+				finalAnswerElement.style.display='block';
+			})
+			.catch(error=>{
+				console.error('Error bro:',error);
+			});
+		})
+		.catch(error=>
+		{
+			console.error('Error fetching image:',error);
+		});
+	}
 });
