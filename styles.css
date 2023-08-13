@@ -3,10 +3,11 @@ body
 	font-family: Arial, sans-serif;
 	color: white;
 	text-align: center;
-	margin: 20px;
+	margin: 0;
+	padding: 0;
 	background-image: url("backgroundmobile.jpeg");
-    background-size: 100%;
-/*    background-repeat: no-repeat;*/
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 @media screen and (min-width: 767px)
 {
