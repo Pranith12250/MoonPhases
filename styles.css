@@ -8,7 +8,7 @@ body
 	background-image: url("backgroundmobile.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+/*    min-height: 100vh;*/
 }
 @media screen and (min-width: 767px)
 {
