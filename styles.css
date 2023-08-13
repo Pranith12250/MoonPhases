@@ -6,7 +6,6 @@ body
 	margin: 20px;
 	background-image: url("background.jpeg");
     background-size: 100% auto;
-    background-repeat: repeat-y;
     background-position: left top;
     position: absolute;
     height: 100%;
