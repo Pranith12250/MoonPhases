@@ -5,10 +5,12 @@ body
 	text-align: center;
 	margin: 20px;
 	background-image: url("background.jpeg");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: left top;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 h1
