@@ -4,12 +4,17 @@ body
 	color: white;
 	text-align: center;
 	margin: 20px;
-	background-image: url("background.jpeg");
-    background-size: 100% auto;
-    background-position: left top;
-    position: absolute;
-    height: 100%;
-    width: 100%;
+	background-image: url("backgroundmobile.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media screen and (min-width: 767px)
+{
+	body
+	{
+		background-image: url("background.jpeg");
+		background-size: cover;
+	}
 }
 
 h1
