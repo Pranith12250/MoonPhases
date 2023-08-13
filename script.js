@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded',function()
                 body: blob
         };
 
-		fetch('https://computervisionlearning2-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/204d319c-3773-49b0-ab22-0390fca2dd1d/classify/iterations/classifyModel/image',options)
+		fetch('https://computervisionlearning2-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/204d319c-3773-49b0-ab22-0390fca2dd1d/classify/iterations/Iteration2/image',options)
 			.then(response=>response.json())
 			.then(data=>
 			{
