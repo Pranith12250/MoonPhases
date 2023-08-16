@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded',function()
                 body: blob
                 query: 
                 {
-					'Prediction-Key': process.env.PREDICTION_KEY;
+					'Prediction-Key': process.env.PREDICTION_KEY
 				}
         };
 
